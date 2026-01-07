@@ -5,7 +5,7 @@ The portfolio demonstrates practical skills in **data cleaning, exploratory data
 
 ---
 
-## 👤 About Me
+## About Me
 I am a PhD candidate in **Technical Systems Operation** with an academic background in **Transportation Systems** and a strong interest in **data analytics**.  
 I am passionate about using data to analyze system performance, identify patterns, and support decision-making.
 
@@ -14,10 +14,10 @@ I have hands-on experience with **Python and SQL** through self-driven learning 
 I am currently building my professional portfolio to transition into a **Data Analytics** role.
 ---
 
-## 📁 Projects
+## Projects
 
-### 1️⃣ Inventory Analysis (Python)
-📂 `InventoryAnalysis/`
+### 1. Inventory Analysis (Python)
+`InventoryAnalysis/`
 
 **Objective:**  
 Analyze warehouse inventory and demand patterns to identify **stockout risks**, demand variability, and improvement opportunities.
@@ -35,8 +35,8 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook
 
 ---
 
-### 2️⃣ SQL Analytics (SQL)
-📂 `SQLAnalytics/`
+### 2. SQL Analytics (SQL)
+`SQLAnalytics/`
 
 **Objective:**  
 Practice analytical SQL queries for business reporting and data aggregation.
@@ -51,7 +51,7 @@ SQL (SQLite / PostgreSQL style)
 
 ---
 
-## 🛠️ Technologies & Tools
+## Technologies & Tools
 - **Python** (Pandas, NumPy, Matplotlib)
 - **SQL**
 - **Jupyter Notebook**
@@ -60,11 +60,11 @@ SQL (SQLite / PostgreSQL style)
 
 ---
 
-## 📌 Notes
+## Notes
 - All projects are self-contained and reproducible.
 - System files and notebook checkpoints are excluded using `.gitignore`.
 - The portfolio is continuously updated as part of my professional development.
 
 ---
 
-📫 *Feel free to explore the projects or reach out for questions and collaboration.*
+*Feel free to explore the projects or reach out for questions and collaboration.*
