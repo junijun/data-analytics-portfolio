@@ -17,52 +17,52 @@ This portfolio has been developed to support my transition into a Data Analytics
 
 ## Projects Overview
 
-### 1. Inventory & Demand Analysis (Python)
+This portfolio is structured as an **Inventory Analytics Pipeline**, where each module builds on the previous one.
+
+### 1. Inventory & Demand Analysis (Python) — Part 1: Diagnostics
 **Folder:** `InventoryAnalysis/`
 
 **Purpose:**  
-Analyze warehouse inventory and demand patterns to identify stockout risks, demand variability, and opportunities to improve replenishment decisions.
+Analyze daily warehouse demand and inventory behavior to identify stockout risks, demand variability, and replenishment performance.
 
 **Key focus:**
-- Exploratory Data Analysis (EDA)
-- Warehouse KPIs (fill rate, stockout days/rate, inventory trends)
-- Time-series inventory behavior per SKU
-- Insights and recommendations for inventory planning
+- Data validation and preparation
+- Exploratory Data Analysis (EDA) with visualizations
+- Warehouse KPIs (fill rate, stockout days/rate, average inventory, lost sales)
+- SKU-level insights and operational findings
 
 **Tools:** Python, pandas, NumPy, Matplotlib, Jupyter Notebook
 
 ---
 
-### 2. SQL Analytics – Inventory & Demand KPIs
-**Folder:** `SQLAnalytics/`
-
-**Purpose:**  
-Demonstrate the use of SQL for analytical querying and KPI calculation using warehouse operational data stored in a SQLite database.
-
-**Key focus:**
-- Inventory and demand KPIs using SQL
-- SKU-level analysis
-- Stockout risk and inventory health indicators
-- Business-oriented SQL analysis for decision support
-
-**Tools:** SQL (SQLite), Python, Jupyter Notebook
-
----
-
-### 3. Inventory Optimization – Scenario Analysis
+### 2. Inventory Optimization — Part 2: Policy Evaluation and Improvement
 **Folder:** `InventoryOptimization/`
 
 **Purpose:**  
-Evaluate inventory policy scenarios and quantify trade-offs between service level and inventory holding cost.
+Build on the KPI baseline from Part 1 and evaluate inventory policy scenarios to improve the trade-off between service level and inventory cost.
 
 **Key focus:**
-- What-if scenario analysis
-- Safety stock and service-level trade-offs
-- SKU-specific inventory strategies
-- Decision support for inventory policy design
+- Scenario analysis and policy comparison
+- Service level improvement strategies
+- Cost-based inventory evaluation (holding vs stockout impact)
+- SKU-specific inventory recommendations
 
 **Tools:** Python, pandas, NumPy, Matplotlib, Jupyter Notebook
 
+---
+
+### 3. SQL Analytics – Inventory & Demand KPIs (Supporting Module)
+**Folder:** `SQLAnalytics/`
+
+**Purpose:**  
+Demonstrate the use of SQL for analytical querying and KPI reporting using warehouse-style operational data stored in a SQLite database.
+
+**Key focus:**
+- Inventory and demand KPI calculations in SQL
+- SKU-level diagnostics and reporting
+- Business-oriented analysis and decision support queries
+
+**Tools:** SQL (SQLite), Python, Jupyter Notebook
 ---
 
 ## Skills & Technologies
@@ -75,11 +75,13 @@ Evaluate inventory policy scenarios and quantify trade-offs between service leve
 ---
 
 ## Portfolio Focus
+
 This portfolio emphasizes:
-- Business-relevant analytics problems
-- Clear and structured analytical workflows
-- Translating data into decision-ready insights
-- Practical supply chain and inventory use cases
+- Business-relevant analytics problems in warehouse and supply chain operations
+- Clear, structured analytical workflows (diagnostics → KPIs → optimization)
+- Translating data into decision-ready insights and recommendations
+- Practical inventory planning use cases (demand variability, stockouts, lead time, replenishment policy)
+- Reproducible analysis with Python, SQL, and version control via Git/GitHub
 
 ---
 
