@@ -1,74 +1,63 @@
 # Data Analytics Portfolio
 
-This repository contains a collection of **data analytics projects** focused on
-inventory management, demand analysis, and decision support in supply chain and
-warehouse operations.
+This repository contains a collection of data analytics projects focused on inventory management, demand analysis, and decision support in supply chain and warehouse operations.
 
-The portfolio demonstrates how **Python and SQL** can be used to transform
-operational data into **actionable business insights**, with an emphasis on
-clear analysis, realistic scenarios, and decision-oriented outcomes.
+The portfolio demonstrates how Python and SQL can be used to transform operational data into actionable business insights, with an emphasis on structured analysis, realistic warehouse scenarios, and decision-oriented outcomes.
 
 ---
 
 ## About Me
-I am a PhD candidate in **Technical Systems Operation** with an academic background
-in **Transportation Systems** and a strong interest in **data analytics**.
+I am a PhD candidate in Technical Systems Operation with an academic background in Transportation Systems and a strong interest in data analytics applied to logistics and warehouse operations.
 
-I have hands-on experience with **Python and SQL**, supported by self-driven learning,
-Udemy courses in Python for Data Analysis, and the **IBM Data Fundamentals program
-with a capstone project**.
+I have hands-on experience with Python and SQL, supported by continuous self-learning, Udemy courses in Python for Data Analysis, and the IBM Data Fundamentals program (including a capstone project).
 
-This portfolio was developed to support my transition into a
-**Data Analytics Engineering / Data Analyst Trainee** role.
+This portfolio has been developed to support my transition into a Data Analytics Engineering / Data Analyst Trainee role.
 
 ---
 
 ## Projects Overview
 
 ### 1. Inventory & Demand Analysis (Python)
-`InventoryAnalysis/`
+**Folder:** `InventoryAnalysis/`
 
 **Purpose:**  
-Analyze warehouse inventory and demand data to identify **stockout risks**, demand
-patterns, and inventory inefficiencies.
+Analyze warehouse inventory and demand patterns to identify stockout risks, demand variability, and opportunities to improve replenishment decisions.
 
 **Key focus:**
 - Exploratory Data Analysis (EDA)
-- Inventory KPIs (stockout rate, average inventory)
-- Time-series analysis
-- Business insights and recommendations
+- Warehouse KPIs (fill rate, stockout days/rate, inventory trends)
+- Time-series inventory behavior per SKU
+- Insights and recommendations for inventory planning
 
 **Tools:** Python, pandas, NumPy, Matplotlib, Jupyter Notebook
 
 ---
 
 ### 2. SQL Analytics – Inventory & Demand KPIs
-`SQLAnalytics/`
+**Folder:** `SQLAnalytics/`
 
 **Purpose:**  
-Demonstrate the use of **SQL for analytical querying and KPI calculation** using
-warehouse operational data stored in a SQLite database.
+Demonstrate the use of SQL for analytical querying and KPI calculation using warehouse operational data stored in a SQLite database.
 
 **Key focus:**
 - Inventory and demand KPIs using SQL
 - SKU-level analysis
-- Stockout risk and inventory health
-- Business-oriented SQL analysis
+- Stockout risk and inventory health indicators
+- Business-oriented SQL analysis for decision support
 
 **Tools:** SQL (SQLite), Python, Jupyter Notebook
 
 ---
 
 ### 3. Inventory Optimization – Scenario Analysis
-`InventoryOptimization/`
+**Folder:** `InventoryOptimization/`
 
 **Purpose:**  
-Evaluate **inventory policy scenarios** to understand the trade-off between
-service level and inventory holding cost.
+Evaluate inventory policy scenarios and quantify trade-offs between service level and inventory holding cost.
 
 **Key focus:**
 - What-if scenario analysis
-- Safety stock and service level trade-offs
+- Safety stock and service-level trade-offs
 - SKU-specific inventory strategies
 - Decision support for inventory policy design
 
@@ -76,29 +65,27 @@ service level and inventory holding cost.
 
 ---
 
-## 4. Skills & Technologies
-- **Python** (pandas, NumPy, Matplotlib)
-- **SQL** (analytical queries, KPI calculation)
-- **Jupyter Notebook**
-- **Git & GitHub**
-- **Data Analysis & Business Insight Communication**
+## Skills & Technologies
+- Python (pandas, NumPy, Matplotlib)
+- SQL (analytical queries, KPI calculation)
+- Jupyter Notebook
+- Git & GitHub
+- Data Analysis and Business Insight Communication
 
 ---
 
-## 5. Portfolio Focus
+## Portfolio Focus
 This portfolio emphasizes:
 - Business-relevant analytics problems
-- Clear, structured analytical workflows
-- Translating data into **decision-ready insights**
+- Clear and structured analytical workflows
+- Translating data into decision-ready insights
 - Practical supply chain and inventory use cases
 
 ---
 
-## 6. Notes
+## Notes
 - All projects are self-contained and reproducible.
-- HTML reports are included for easy review without running code.
+- HTML reports may be included for review without running code (where available).
 - The portfolio is continuously refined as part of my professional development.
 
----
-
-*Thank you for reviewing my portfolio.*
+Thank you for reviewing my portfolio.
