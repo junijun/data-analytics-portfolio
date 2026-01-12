@@ -1,87 +1,112 @@
-# Inventory & Demand Analysis (Python)
+## Inventory & Demand Analysis (Python)
 
-## Overview
-This project analyzes warehouse inventory and demand patterns to identify **stockout risks**, **inventory inefficiencies**, and **opportunities for improvement**.  
-Using Python-based exploratory analysis and KPI calculation, the project demonstrates how data analytics supports **operational and supply chain decision-making**.
+### Overview
+This project analyzes warehouse inventory and demand patterns to identify stockout risks, inventory inefficiencies, and opportunities for improvement.  
+Using Python-based exploratory analysis and KPI calculation, the project demonstrates how analytics supports operational and supply chain decision-making.
 
-The analysis is designed to resemble a real-world warehouse scenario with multiple SKUs, variable demand, and replenishment lead times.
-
----
-
-## Business Objectives
-- Understand demand behavior across SKUs and over time  
-- Identify products with elevated stockout risk  
-- Evaluate inventory performance using key operational KPIs  
-- Support data-driven decisions for inventory planning and replenishment  
+The analysis is designed to resemble a real-world warehouse scenario with multiple SKUs, variable demand, and replenishment orders arriving after supplier lead time.
 
 ---
 
-## Dataset Description
-The dataset represents daily warehouse operations and includes:
-- **Date** – Daily observation  
-- **SKU** – Product identifier  
-- **Demand** – Daily customer demand  
-- **Inventory Level** – Available stock after demand fulfillment  
-- **Stockout Indicator** – Whether demand could not be fully satisfied  
-- **Lead Time (days)** – Replenishment delay  
-
-> The dataset is synthetically generated to simulate realistic inventory behavior.
+### Business Objectives
+- Understand demand behavior across SKUs and over time
+- Identify products with elevated stockout risk and service-level impact
+- Evaluate inventory performance using key warehouse KPIs
+- Support data-driven decisions for inventory planning and replenishment policies
 
 ---
 
-## Analysis Steps
-1. **Data Loading & Preparation**  
-   Import data and validate structure and data quality.
+### Dataset Description
+The dataset represents daily warehouse operations and includes both operational activity and replenishment signals.
 
-2. **Exploratory Data Analysis (EDA)**  
-   - Demand distribution per SKU  
-   - Inventory level trends over time  
-   - Identification of stockout occurrences  
+Daily operational variables:
+- Date – daily observation
+- SKU – product identifier
+- Demand – daily customer demand
+- Filled Demand – units successfully delivered from available stock
+- Lost Sales – unfulfilled demand due to insufficient inventory (no backorders)
+- Inventory Level – on-hand stock after demand fulfillment
+- Stockout Indicator – whether demand could not be fully satisfied (`lost_sales > 0`)
 
-3. **Inventory KPIs**  
-   - Average inventory level  
-   - Stockout rate  
-   - Demand variability per SKU  
+Replenishment and planning variables:
+- Lead Time (days) – replenishment delay
+- Order Quantity – replenishment order placed
+- Receipts – inbound replenishment received
+- On Order – outstanding quantity in open purchase orders
+- Inventory Position – on-hand + on-order inventory
+- ROP / Order-up-to levels – simplified replenishment policy parameters used in simulation
 
-4. **Visualization**  
-   - Time-series inventory trends  
-   - SKU-level comparisons to highlight operational differences  
-
----
-
-## Key Business Insights
-- Demand patterns differ significantly across SKUs, reinforcing the need for **SKU-level inventory policies** rather than aggregated planning.  
-- Certain SKUs experience **higher demand variability**, increasing stockout risk without adequate safety stock.  
-- Persistent low inventory levels correlate with repeated stockouts, indicating **replenishment timing or quantity issues**.  
-- Inventory trends over time reveal periods of potential overstocking and understocking, highlighting optimization opportunities.  
+The dataset is synthetically generated to simulate realistic warehouse behavior (demand variability, lead time variability, MOQ constraints, and replenishment timing effects).
 
 ---
 
-## Why This Matters
+### Analysis Steps
+
+1. Data Loading & Preparation
+   - Import data
+   - Validate structure and data quality
+   - Ensure correct data types and sorting (SKU + time-series order)
+
+2. Simulation Validation (Quick Checks)
+   - No duplicate SKU-day records
+   - No missing values in key fields
+   - Inventory never becomes negative
+   - Stockout logic consistency (`stockout = 1 ⇔ lost_sales > 0`)
+   - Replenishment flow validation (orders placed and receipts arriving after lead time)
+
+3. Exploratory Data Analysis (EDA)
+   - Demand distribution per SKU
+   - Inventory level trends over time
+   - Identification of stockout occurrences
+   - Receipts and ordering patterns
+
+4. Inventory KPIs (Warehouse Metrics)
+   - Average inventory level
+   - Stockout rate / stockout days
+   - Demand variability per SKU
+   - Fill rate (service level proxy):  
+     `fill_rate = Σ filled_demand / Σ demand`
+
+5. Visualization
+   - Time-series inventory trends
+   - SKU-level comparison plots to highlight operational differences
+   - Replenishment behavior over time (receipts vs inventory vs stockouts)
+
+---
+
+### Key Business Insights
+- Demand patterns differ significantly across SKUs, reinforcing the need for SKU-level inventory policies rather than aggregated planning.
+- Certain SKUs show higher demand variability, increasing stockout risk without adequate inventory buffers.
+- Stockouts are strongly linked to replenishment behavior (lead time and order timing), showing the value of planning based on inventory position rather than only on-hand stock.
+- Inventory trends over time reveal periods of understocking and overstocking, highlighting optimization opportunities.
+
+---
+
+### Why This Matters
 This type of analysis helps organizations:
-- Reduce service level failures caused by stockouts  
-- Improve inventory availability while controlling holding costs  
-- Support proactive replenishment and capacity planning  
-- Align operational decisions with data rather than intuition  
+- Reduce service level failures caused by stockouts
+- Improve inventory availability while controlling holding costs
+- Support proactive replenishment and capacity planning
+- Align operational decisions with data rather than intuition
 
 ---
 
-## Tools & Technologies
-- **Python**  
-- **pandas, NumPy**  
-- **Matplotlib**  
-- **Jupyter Notebook**  
+### Tools & Technologies
+- Python
+- pandas, NumPy
+- Matplotlib
+- Jupyter Notebook
 
 ---
 
-## Outputs
-- Exploratory analysis notebook (`inventory_analysis.ipynb`)  
-- Shareable HTML report (`inventory_analysis.html`)  
-- Actionable inventory KPIs and visual insights  
+### Outputs
+- Exploratory analysis notebook: `inventory_analysis.ipynb`
+- Actionable warehouse KPIs and visual insights
 
 ---
 
-## Next Steps (Possible Extensions)
-- Integrate forecasting models for demand prediction  
-- Add cost-based inventory optimization  
-- Extend analysis to multi-warehouse or multi-echelon scenarios  
+### Next Steps (Possible Extensions)
+- Integrate forecasting models for demand prediction
+- Add cost-based inventory optimization (holding vs ordering vs stockout costs)
+- Extend analysis to multi-warehouse or multi-echelon scenarios
+- Implement ABC/XYZ segmentation and replenishment policy recommendations
