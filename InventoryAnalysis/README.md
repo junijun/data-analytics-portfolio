@@ -99,14 +99,16 @@ This type of analysis helps organizations:
 
 ---
 
-### Outputs
-- Exploratory analysis notebook: `inventory_analysis.ipynb`
-- Actionable warehouse KPIs and visual insights
+### Key Outputs
+- Demand patterns and trends per SKU (daily + 7-day moving average)
+- Inventory level behavior over time with stockout events highlighted
+- Replenishment behavior (receipts vs inventory level)
+- KPI summary per SKU: fill rate, stockout days/rate, average inventory, lost sales
+- Value-based KPIs: lost sales value and average inventory value
 
 ---
 
-### Next Steps (Possible Extensions)
-- Integrate forecasting models for demand prediction
-- Add cost-based inventory optimization (holding vs ordering vs stockout costs)
-- Extend analysis to multi-warehouse or multi-echelon scenarios
-- Implement ABC/XYZ segmentation and replenishment policy recommendations
+### Recommendations (Bridge to Inventory Optimization)
+This analysis establishes a baseline reorder policy (ROP + order-up-to with lead time).  
+Based on observed stockouts and lost sales value, the next step is to evaluate alternative policies and quantify trade-offs between service level and inventory investment in the InventoryOptimization module.
+
