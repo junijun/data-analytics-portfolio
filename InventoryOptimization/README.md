@@ -1,81 +1,71 @@
-# 📈 Inventory Optimization: Scenario Analysis (Service Level vs Inventory)
+# Inventory Optimization (Scenario-Based Policy Evaluation)
 
 ## Overview
-This project evaluates inventory policy scenarios using historical demand data to compare
-**service performance** against **inventory levels**.  
-It demonstrates how analytical scenario analysis can support **inventory optimization decisions**
-in warehouse and supply chain operations.
+This project extends the Inventory & Demand Analysis (Project 1) by evaluating alternative replenishment policy scenarios and quantifying the trade-off between service level and inventory investment.
 
-The focus is on understanding the trade-off between **service level improvement** and **inventory holding cost**.
-
----
+Using a simulated warehouse dataset with multiple SKUs, variable demand, and replenishment lead times, the notebook compares a baseline reorder policy against improved policies with higher buffer coverage (`cover_days`).
 
 ## Business Objective
-- Compare safety stock scenarios and quantify the trade-off between:
-  - **Stockout risk / service performance** (fill rate)
-  - **Average inventory level** (holding cost proxy)
-- Support data-driven inventory policy selection at the SKU level
+- Improve inventory availability and reduce stockouts
+- Reduce lost sales impact (units and monetary value)
+- Understand the trade-off between higher service level and higher inventory value
+- Recommend SKU-level replenishment policies based on data-driven scenario comparison
 
----
+## Baseline Policy (Reference)
+The baseline benchmark is taken from Project 1:
+- Reorder Point (ROP) and Order-up-to policy with lead time
+- Baseline buffer coverage: `cover_days = 7`
 
-## Methodology
-A simplified **(s, S) inventory policy** is simulated independently for each SKU:
+## Optimization Strategy
+Instead of applying one policy to all SKUs, this project tests improved buffer scenarios and evaluates performance differences.
 
-- Reorder occurs when inventory position ≤ **reorder point (ROP)**
-- Orders arrive after a stochastic **lead time**
-- Multiple scenarios are evaluated by varying the **safety factor (k)** used in the ROP calculation
+### Scenarios Tested
+- Scenario A (Balanced Policy): `cover_days = 10`
+- Scenario B (High Service Policy): `cover_days = 14`
 
-This allows comparison of inventory performance under different service-level targets.
+Higher cover_days increases the order-up-to level, which generally improves service performance but increases average inventory value.
 
----
+## Evaluation Metrics
+Each scenario is compared using the same KPI framework as Project 1:
 
-## Outputs
-- Scenario KPI table per SKU, including:
-  - Stockout rate
-  - Fill rate (service level)
-  - Average on-hand inventory
-  - Number of replenishment orders
-- Trade-off visualization:
-  - **Stockout rate vs. average inventory** for each SKU
+Service performance:
+- Fill rate = filled_demand / total_demand
+- Stockout rate = stockout_days / days
 
----
+Business impact:
+- Lost sales value (€)
 
-## Key Business Insights
-This analysis highlights how inventory decisions directly impact both service performance and cost:
+Inventory investment proxy:
+- Average inventory value (€)
 
-- Increasing safety stock generally **reduces stockout risk** and improves service levels.
-- The relationship between inventory and service level is **nonlinear** — beyond a certain point,
-  additional inventory yields **diminishing service improvements**.
-- Inventory strategies should be **SKU-specific**:
-  - High-variability SKUs benefit more from safety stock buffers.
-  - Stable-demand SKUs may be overstocked, presenting **cost-reduction opportunities**.
+Scenario performance is evaluated using delta metrics relative to the baseline policy:
+- fill_rate_delta
+- lost_sales_value_delta
+- avg_inventory_value_delta
 
----
+## Key Outputs
+- Baseline KPI benchmark table per SKU
+- Scenario KPI comparison (Baseline vs Scenario A vs Scenario B)
+- Improvement vs baseline (delta) analysis
+- Trade-off visualization (service level vs inventory investment)
+- Final recommendation table per SKU based on scenario performance
 
-## Why This Matters
-This type of scenario analysis supports:
-- Data-driven **inventory policy design**
-- Service-level target setting
-- Structured trade-off discussions between **operations, finance, and supply chain teams**
-- Risk-aware decision-making under demand uncertainty
-
----
+## Key Findings
+- Increasing buffer coverage improves fill rate and reduces lost sales value across SKUs.
+- Higher service levels require higher inventory investment (higher average inventory value).
+- The recommended scenario differs by SKU, supporting SKU-level policies rather than one global setting.
 
 ## Tools & Technologies
-- **Python**
-- **pandas, NumPy**
-- **Matplotlib**
-- **Jupyter Notebook**
+- Python
+- pandas, NumPy
+- Matplotlib
+- Jupyter Notebook
 
----
+## Project Files
+- `notebooks/inventory_optimization_scenarios.ipynb` — scenario simulation, KPI comparison, and recommendation analysis
 
-## Extensions & Next Steps
-This approach can be extended by:
-- Incorporating demand forecasting models
-- Adding explicit holding and stockout cost parameters
-- Evaluating multi-echelon or multi-warehouse inventory structures
-
----
-
-This project demonstrates how **analytical scenario evaluation** helps balance
-**service performance** and **cost efficiency** in inventory management.
+## Next Steps (Possible Extensions)
+- Add holding cost, ordering cost, and total cost comparison per scenario
+- Introduce service level targets by SKU category (e.g., Fast Movers vs Slow Movers)
+- Extend evaluation to multi-warehouse or multi-echelon inventory models
+- Use forecasting-driven demand inputs instead of fixed base demand
